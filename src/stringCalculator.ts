@@ -12,7 +12,7 @@ export class StringCalculator {
 
     this.checkForNegative(numberArray);
 
-    return numberArray.reduce((sum, number) => sum + number, 0);
+    return numberArray.filter(num => num <= 1000).reduce((sum, number) => sum + number, 0);
   }
 
   checkForNegative(numbers: number[]) {
