@@ -27,4 +27,8 @@ describe("StringCalculator", () => {
     expect(calc.Add("//;\n1;2")).toBe(3);
   });
 
+  test("Throws error on negative numbers", () => {
+    expect(() => calc.Add("1,-2,-5")).toThrow("negatives not allowed: -2, -5");
+  });
+
 });
