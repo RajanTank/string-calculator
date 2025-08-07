@@ -1,7 +1,8 @@
 export class StringCalculator {
   public Add(numbers: string): number {
-    const num = parseInt(numbers);
-    return isNaN(num) ? 0 : num;
+    if (!numbers) return 0;
+    const numberArray = numbers.split(",").map(n => parseInt(n));
+    return numberArray.reduce((sum, number) => sum + number, 0);
   }
 }
 
