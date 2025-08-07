@@ -31,4 +31,8 @@ describe("StringCalculator", () => {
     expect(() => calc.Add("1,-2,-5")).toThrow("negatives not allowed: -2, -5");
   });
 
+  test("Ignores numbers greater than 1000", () => {
+    expect(calc.Add("2,1001")).toBe(2);
+  });
+
 });
