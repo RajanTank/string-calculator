@@ -15,4 +15,8 @@ describe("StringCalculator", () => {
     expect(calc.Add("1,2")).toBe(3);
   });
 
+  test("Handles unknown number of inputs", () => {
+    expect(calc.Add("1,2,3,4")).toBe(10);
+  });
+
 });
