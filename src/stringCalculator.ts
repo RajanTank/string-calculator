@@ -9,7 +9,17 @@ export class StringCalculator {
     }
     const regex = new RegExp(delimiters.join("|"));
     const numberArray = numbers.split(regex).map(n => parseInt(n));
+
+    this.checkForNegative(numberArray);
+
     return numberArray.reduce((sum, number) => sum + number, 0);
+  }
+
+  checkForNegative(numbers: number[]) {
+    const negatives = numbers.filter(n => n < 0);
+    if (negatives.length > 0) {
+      throw new Error(`negatives not allowed: ${negatives.join(", ")}`);
+    }
   }
 }
 
