@@ -7,4 +7,8 @@ describe("StringCalculator", () => {
     expect(calc.Add("")).toBe(0);
   });
 
+  test("Returns number for single number input", () => {
+    expect(calc.Add("1")).toBe(1);
+  });
+
 });
